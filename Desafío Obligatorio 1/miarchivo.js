@@ -2,9 +2,9 @@ let pesos
 let cambioDeMoneda
 
 const euros = (montoEnPesos) => montoEnPesos / 47.66
-const dolares = () => montoEnPesos / 42.55
+const dolares = (montoEnPesos) => montoEnPesos / 42.55
 const pesosArgentinos = (montoEnPesos) => montoEnPesos / 0.37
-const libras = (montoEnPesos) = (montoEnPesos) => montoEnPesos/ 57.95 
+const libras = (montoEnPesos) => montoEnPesos/ 57.95 
 
 do {
 
