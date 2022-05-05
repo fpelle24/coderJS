@@ -2,8 +2,8 @@ let pesos
 let cambioDeMoneda
 let operacionesDiarias = []
 
-const monedas =[
-    { 
+const monedas = [
+    {
         id: 1,
         nombre: "Euros",
         tasaDeCambio: 47.66
@@ -40,46 +40,57 @@ monedas.forEach(mon => {
 
 let arrayDos = monedas.slice(0)
 
-function ordenar(arrayDos) {
+function ordenarDescendente() {
 
-    
-arrayDos.sort(function (a, b) {
+    tablaCotizaciones.innerHTML = "";
 
-if (a.tasaDeCambio > b.tasaDeCambio) {
+    arrayDos.sort(function (a, b) {
+        if (a.tasaDeCambio > b.tasaDeCambio) { return 1; }
+        if (a.tasaDeCambio < b.tasaDeCambio) { return -1; }
+        return 0;
+    })
 
-return 1;
+    return arrayDos.forEach(mon => {
+
+        tablaCotizaciones.innerHTML += `
+        <tr>                
+        <td id="${mon.id}">${mon.nombre} </td>
+        <td>${mon.tasaDeCambio} </td>
+        </tr>
+        </br>
+            `
+    })
 
 }
 
-if (a.tasaDeCambio < b.tasaDeCambio) {
 
-return -1;
+function ordenarAscendente() {
+
+    tablaCotizaciones.innerHTML = "";
+
+    arrayDos.sort(function (a, b) {
+        if (a.tasaDeCambio < b.tasaDeCambio) { return 1; }
+        if (a.tasaDeCambio > b.tasaDeCambio) { return -1; }
+        return 0;
+    })
+
+    return arrayDos.forEach(mon => {
+
+        tablaCotizaciones.innerHTML += `
+        <tr>                
+        <td id="${mon.id}">${mon.nombre} </td>
+        <td>${mon.tasaDeCambio} </td>
+        </tr>
+        </br>
+            `
+    })
 
 }
 
-// a must be equal to b
+console.log(arrayDos)
 
-return 0;
+function calcular(idMoneda) {
 
-});
-
-tablaCotizaciones.innerHTML = ""
-    arrayDos.forEach(mon => {
-
-    tablaCotizaciones.innerHTML += `
-    <tr>                
-    <td id="${mon.id}">${mon.nombre} </td>
-    <td>${mon.tasaDeCambio} </td>
-    </tr>
-    </br>
-    `
-})
-}
-
-
-
-function calcular(idMoneda){
-    
     let moneda = monedas.find(mon => mon.id == idMoneda)
     let resultado = pesos / moneda.tasaDeCambio
     return resultado.toFixed(2)
@@ -96,7 +107,7 @@ do {
     if (isNaN(pesos) || isNaN(cambioDeMoneda)) {
         alert("Ingrese ambas opciones en número")
 
-    }  
+    }
 
 } while (isNaN(pesos) || isNaN(cambioDeMoneda))
 
