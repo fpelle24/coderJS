@@ -38,6 +38,44 @@ monedas.forEach(mon => {
     `
 })
 
+let arrayDos = monedas.slice(0)
+
+function ordenar(arrayDos) {
+
+    
+arrayDos.sort(function (a, b) {
+
+if (a.tasaDeCambio > b.tasaDeCambio) {
+
+return 1;
+
+}
+
+if (a.tasaDeCambio < b.tasaDeCambio) {
+
+return -1;
+
+}
+
+// a must be equal to b
+
+return 0;
+
+});
+
+tablaCotizaciones.innerHTML = ""
+    arrayDos.forEach(mon => {
+
+    tablaCotizaciones.innerHTML += `
+    <tr>                
+    <td id="${mon.id}">${mon.nombre} </td>
+    <td>${mon.tasaDeCambio} </td>
+    </tr>
+    </br>
+    `
+})
+}
+
 
 
 function calcular(idMoneda){
