@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-6">
+            <h1 class="alert alert-primary" role="alert"> CAMBIO DE KITO </h1>
+            <table>
+                <tr>
+                    <th>Tipo de moneda</th>
+                    <th>Monto a cambiar</th>
+                    <th>Moneda deseada</th>
+                    <th>Monto de cambio</th>
+                    <th>Nombre usuario</th>
+                </tr>
+                <td>
+                    <input type="text" readonly disabled value="Pesos Uruguayos">
+                </td>
+                <td>
+                    <input id="montoCambiar" type="number" min="0">
+                </td>
+                <td>
+                    <select name="monedaDeseada" id="dMoneda">
+                        <option selected disabled> </option>
+                    </select>
+                </td>
+                <td>
+                    <input id="montocambio" type="text" readonly>
+                </td>
+                <td>
+                    <input id="botoncambio" type="button" value="Cambio">
+                    <!-- <input id="userName" type="text"> -->
+                </td>
+            </table>
+        </div>
+        <div class="col">
+            <input id="asc" type="button" value="Ascendente">
+            <input id="desc" type="button" value="Descendente">
+            <div>
+
+                <table>
+                    <tr>
+                        <th>Moneda y Cotización</th>
+                    </tr>
+                    <tr>
+                        <td id="Moneda"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-6">
+                <h2 class="alert alert-primary" role="alert">Operaciones del día</h1>
+                <table>
+                    <tr>
+                        <th style="width: 5cm;"> Pesos cambiados</th>
+                        <th style="width: 5cm;"> Moneda de cambio</th>
+                        <th style="width: 5cm;"> Cambio</th>
+                    </tr>
+                    <tr>
+                    <tbody id="operaciondiaria"></tbody>
+                    </tr>
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+</body>
+<script src="miarchivo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</html>
