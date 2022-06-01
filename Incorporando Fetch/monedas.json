@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "nombre": "Euros",
+        "tasaDeCambio": 45.39
+    },
+    {
+        "id": 2,
+        "nombre": "Dólares",
+        "tasaDeCambio": 41.10
+    },
+    {
+        "id": 3,
+        "nombre": "Pesos Argentinos",
+        "tasaDeCambio": 0.37
+    },
+    {
+        "id": 4,
+        "nombre": "Libras",
+        "tasaDeCambio": 53.80
+    },
+    {
+        "id": 5,
+        "nombre": "Reales",
+        "tasaDeCambio": 9.5
+    },
+    {
+        "id": 6,
+        "nombre": "Pesos Chilenos",
+        "tasaDeCambio": 0.05
+    },
+    {
+        "id": 7,
+        "nombre": "Franco Suizo",
+        "tasaDeCambio": 43.64	
+    }
+]
