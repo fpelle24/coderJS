@@ -1,8 +1,8 @@
 //Clase la cual va a ser utilizada para guardar las operaciones diarias en el local y mostrarlas en pantalla
 class transaccionesDiarias {
-    constructor(monto, cambio, resultado) {
+    constructor(monto, nombreCambio, resultado) {
         this.monto = monto
-        this.cambio = cambio
+        this.nombreCambio = nombreCambio
         this.resultado = resultado
     }
 }
@@ -78,7 +78,7 @@ function comboboxDinamico() {
     monedas.forEach((mone) => {
 
         monedaDeseada.innerHTML += `
-        <option value="${mone.id}">${mone.nombre}</option>
+        <option data-name="${mone.nombre}" value="${mone.id}">${mone.nombre}</option>
         `
     })
 }
@@ -129,7 +129,7 @@ function mostrarOperacionesDiarias() {
         operacionDiaria.innerHTML += `
                 <tr>
                   <td>${eve.monto}  </td>
-                  <td> ${eve.cambio} </td>
+                  <td> ${eve.nombreCambio} </td>
                   <td> ${eve.resultado} </td>
                 </tr>
                   `
@@ -157,6 +157,8 @@ botoncambio.addEventListener("click", () => {
 
     let moneda = monedas.find(mon => mon.id == cambio)
 
+    let nombreCambio = monedaDeseada.options[monedaDeseada.selectedIndex].text
+
     let monto = montoAcambiar.value
 
     pesosBase -= monto
@@ -170,7 +172,7 @@ botoncambio.addEventListener("click", () => {
     } else {
         alertaCambio("Cambio realizado correctamente", 'success')     
 
-        const operacion = new transaccionesDiarias(monto, cambio, resultado)
+        const operacion = new transaccionesDiarias(monto, nombreCambio, resultado)
 
         operacionesDiarias.push(operacion)
 
@@ -181,7 +183,7 @@ botoncambio.addEventListener("click", () => {
         operacionDiaria.innerHTML += `
                 <tr>
                   <td>${monto}  </td>
-                  <td> ${cambio} </td>
+                  <td> ${nombreCambio} </td>
                   <td> ${resultado} </td>
                 </tr>
                   `
